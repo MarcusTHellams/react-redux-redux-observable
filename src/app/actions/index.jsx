@@ -37,7 +37,7 @@ export const itemsEpic = (action$) => {
         .switchMap(() => {
             return Rx
                 .Observable
-                .fromPromise(axios.get('http://localhost:3000/ap2'));
+                .fromPromise(axios.get('http://localhost:3000/api2'));
         })
         .map((resp) => {
             return {type: 'LOADING_ITEMS_SUCCESS', payload: resp.data}
