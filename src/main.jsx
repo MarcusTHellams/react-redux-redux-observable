@@ -4,10 +4,10 @@ import {createStore, applyMiddleware} from 'redux';
 import allReducers from './app/reducers/';
 import App from './app/components/app.component';
 import {Provider} from 'react-redux';
-import {createEpicMiddleware} from 'redux-observable';
-import {pingEpic} from './app/actions';
+import {createEpicMiddleware, combineEpics} from 'redux-observable';
+import {pingEpic, itemsEpic} from './app/actions';
 
-const epicMiddleware = createEpicMiddleware(pingEpic);
+const epicMiddleware = createEpicMiddleware(combineEpics(pingEpic, itemsEpic));
 
 const store = createStore(allReducers, applyMiddleware(epicMiddleware));
 

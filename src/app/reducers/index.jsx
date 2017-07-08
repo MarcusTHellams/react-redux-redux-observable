@@ -1,6 +1,7 @@
 import {combineReducers} from 'redux';
 import UserReducer from './reducer-users';
 import ActiveUserReducer from './active-user.reducer';
+import ItemsReducer from './items.reducer';
 
 const pingReducer = (state = {
     isPinging: false
@@ -17,6 +18,6 @@ const pingReducer = (state = {
     }
 };
 
-const allReducers = combineReducers({users: UserReducer, activeUser: ActiveUserReducer, pinging: pingReducer});
+const allReducers = combineReducers({users: UserReducer, activeUser: ActiveUserReducer, pinging: pingReducer, items: ItemsReducer});
 
 export default allReducers;
