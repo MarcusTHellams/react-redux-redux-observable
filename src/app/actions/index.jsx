@@ -31,7 +31,7 @@ export const getItems = () => {
     return {type: 'LOADING_ITEMS'};
 }
 
-export const itemsEpic = (action$) => {
+export const itemsEpic = (action$, store) => {
     return action$
         .ofType('LOADING_ITEMS')
         .switchMap(() => {
